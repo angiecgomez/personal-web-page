@@ -1,0 +1,284 @@
+@charset "utf-8";
+/*Documento original CSS*/
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #251D3A;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 70px;
+}
+
+/* .header */
+#cabecera{
+    background-color: #2A2550;
+    width: 100%;
+    height: 70px;
+    /*fija la cabecera*/
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* .nav */
+.navegacionPrin{
+    /*pasar los elementos de la lista a la izq
+    y separarlos entre ellos*/
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.menu li a{
+    text-decoration: none;
+    font-family: Helvetica;
+    font-weight: bold;
+    /*efecto hover arriba y abajo, derecha e izq*/
+    color: white;
+}
+
+/*Logo*/
+.logo {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    font-weight: bold;
+    color: white; 
+    /*Centrar el nombre en la cabecera line-height = height cabecera*/
+    line-height: 70px;
+    /*padding arriba y abajo 0px e izq y der 30px*/
+    padding: 0 30px;
+    /*para que no se desplace el Gómez a la otra fila*/
+    white-space: nowrap;
+    
+}
+
+/* lista de links*/
+.menu {
+    /*para que los elementos del menú queden dispersos de forma horizontal*/ 
+    display: flex;
+    margin-right: 30px;
+    list-style: none;
+    padding: 0px;
+}
+
+/* cada elemento de la lista*/
+.menu li{
+    list-style: none;
+    font-size: 20px;
+    /*margen entre cada item de la lista arriba y abajo 0px 
+    e izq y der 10 px*/
+    margin: 0 10px;
+    line-height: 70px;
+    width: max-content;
+}
+
+.menu li a{
+    /*sombra alrededor de la palabra, arriba y abajo 25px
+    e iz y der 15 px*/
+    padding: 23px 15px;
+    border-radius: 4px;
+    transition: 0.5s;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.menu li a:hover{
+    background-color: #7b05f2;
+}
+
+.menuBars {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 40px; 
+    padding: 0 20px;
+    line-height: 70px;
+    /*solo se ve para dispositivos de escritorio*/
+    display: none;
+    cursor: pointer;
+}
+
+#contenidoPrin{
+    padding: 60px;
+
+}
+
+#imagen-yo{
+    float: left;
+    padding-right: 30px;
+}
+
+.about-me{
+    padding-top: 20px;
+}
+
+.name{
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+}
+
+.who-am-I{
+    padding-top: 40px;
+    text-align: center;
+}
+
+#piePrin{
+    margin-top: auto;
+}
+
+#piePrin h2{
+    font-size: 15px;
+    text-align: center;
+}
+
+/*estilos para cuando se despliegue en dispositivos moviles*/
+
+@media only screen and (max-width: 992px){
+
+    #contenidoPrin{
+        padding-top: 30px;
+    }
+
+    .menu{
+        flex-direction: column;
+        margin: 0px;
+        position: fixed;
+        background-color: #2A2550;
+        position: fixed;
+        left: 0;
+        top: 70px;
+        width: 100%;
+        align-items: center;
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    .menuBars{
+        /*activa el menú hamburguesa*/
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu_visible{
+        left: 0;
+    }
+}
+
+/* estilos para estudios.html*/
+
+.title{
+    padding: 20px;
+    font-size: 40px;
+    font-weight: 800;
+    text-align: center;
+}
+
+table {
+    margin-top: 30px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+th {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+td {
+    font-size: 20px;
+    text-align: center;
+}
+
+th, td {
+    padding: 10px;
+}
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+/* estilos para proyectos.html*/
+
+.tipo{
+    font-size: 20px;
+    font-weight: 800;
+    padding: 20px;
+}
+
+.content {
+    list-style-type: disc;
+}
+
+/* estilos para pasatiempos.html */
+
+.pasatiempos {
+    padding: 0px 40px;
+}
+
+.pasatiempos-grid{
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr;
+    width: 100%;
+    margin: 0 auto;
+    gap: 25px;
+    justify-content: center;
+}
+
+.pasatiempo-item {
+    width: 100%;
+    height: 95%;
+    border: 1px solid white;
+    object-fit: fill;
+}
+
+/* estilos para contacto.html*/
+
+.formulario{
+    width: 60%;
+    background-color: #7b05f2;
+    border-radius: 6px;
+    padding: 40px;
+    margin: auto;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.formulario p{
+    font-size: 25px;
+    font-weight: bolder;
+    padding-bottom: 20px;
+}
+
+#mensaje {
+    height: 200px;
+}
+
+.formulario button {
+    border: none;
+    color: black;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
